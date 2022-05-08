@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script>
+        function zhuce() {
+            if (window.confirm("是否跳转到注册界面？")) {
+                window.location.href = 'page.do?operate=zhucepage&zhucepage=zhuce';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div0">
+    <div id="div_container">
+        <p class="center">用户登录1</p>
+        <form th:action="@{/user.do}" method="get">
+            <input type="hidden" name="operate" value="login"/>
+            <table>
+                <tr>
+                    <th>用户名：</th>
+                    <td><input type="text" name="loginId" value="u01"/></td>
+                </tr>
+                <tr>
+                    <th>密码：</th>
+                    <td><input type="password" name="pwd" value="666666"/></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="登录"/>
+                        <input type="button" value="还没有账号？" onclick="zhuce()"/>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
